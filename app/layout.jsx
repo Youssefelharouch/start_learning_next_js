@@ -2,9 +2,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <header>[header]</header>
+        <header style={{ border: "solid blue 1px" }}>[header]</header>
         <main>{children}</main>
-        <footer>[footer]</footer>
+        <footer style={{ border: "solid green 1px" }} >[footer]</footer>
       </body>
     </html>
   );
