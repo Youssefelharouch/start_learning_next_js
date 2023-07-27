@@ -2,7 +2,6 @@ import Heading from '../components/Heading';
 
 
 export default function HomePage() {
-  console.log("[homePage] rendreing")
   return (
     <>
       <Heading>Indie Gamer</Heading>
