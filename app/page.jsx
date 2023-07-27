@@ -1,12 +1,22 @@
+// import { readFile } from 'node:fs/promises';
+// import { marked } from 'marked';
 import Heading from '../components/Heading';
 
+export default async function StardewValleyPage() {
+  // const text = await readFile('/content/reviews/stardew-valley.md','utf8');
 
-export default function HomePage() {
+  // const html = marked(text, { headerIds: false, mangle: false });
+
   return (
     <>
-      <Heading>Indie Gamer</Heading>
-      <p>ony the best Youssef games , reviewd for you .</p>
+      <Heading>Stardew Valley</Heading>
+      <img src="/images/stardew-valley.jpg" alt=""
+        width="640" height="360" className="mb-2 rounded"
+      />
+      <p>
+        {text}
+      </p>
+      {/* <article dangerouslySetInnerHTML={{ __html: html }} /> */}
     </>
   );
 }
-//http://localhost:3000

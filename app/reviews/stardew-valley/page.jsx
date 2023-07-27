@@ -1,16 +1,18 @@
-import Heading from '../../../components/Heading'
+import Heading from '../../../components/Heading';
+import { getReview } from '../../../lib/reviews';
 
-
-export default function stardewValley() {
-
+export default async function StardewValleyPage() {
+  const review = await getReview("stardew-valley");
   return (
     <>
-    
-      <Heading>stardew Valley</Heading>
-      <img src="/images/stardew-valley.jpg" alt="" width="640" height="360" 
-      className="mb-2 rounded"
+      <Heading>{review.title}</Heading>
+      <p className="italic pb-2">{review.date}</p>
+      <img src={review.image} alt=""  width="640" height="360" className="mb-2 rounded"
       />
-      <p>this is will be the review for stardew Valley.</p>
+         <article dangerouslySetInnerHTML={{ __html: review.body }}
+        className="max-w-screen-sm prose prose-slate"
+      />
+
     </>
-  );
+  )
 }
