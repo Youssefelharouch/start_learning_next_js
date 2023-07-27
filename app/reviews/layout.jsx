@@ -15,7 +15,7 @@ export default function ReviewLayout({ children }) {
                   height="180"
                   className="rounded-t"
                 />
-                <h2 className="text-center py-1 " >hollow Knight</h2>
+                <h2 className="font-semibold font-orbitron text-center py-1 " >hollow Knight</h2>
                 
               </Link>
             </li>
@@ -30,7 +30,7 @@ export default function ReviewLayout({ children }) {
                   height="180"
                   className="rounded-t"
                 />
-                <h2 className="text-center py-1 " >Stardew-valley</h2>
+                <h2 className="font-semibold font-orbitron text-center py-1 " >Stardew-valley</h2>
                 
               </Link>
             </li>
