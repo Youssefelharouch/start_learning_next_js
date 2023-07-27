@@ -1,7 +1,10 @@
+import Heading from "../../components/Heading";
+
 export default function stardewValley() {
   return (
     <>
-      <h1>about page </h1>
+
+      <Heading>About Page</Heading>
       <p>about our game ! </p>
     </>
   );
