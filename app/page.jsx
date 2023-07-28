@@ -13,9 +13,7 @@ export default async function StardewValleyPage() {
       <img src="/images/stardew-valley.jpg" alt=""
         width="640" height="360" className="mb-2 rounded"
       />
-      <p>
-        {text}
-      </p>
+    
       {/* <article dangerouslySetInnerHTML={{ __html: html }} /> */}
     </>
   );
