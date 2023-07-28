@@ -3,10 +3,7 @@ import Heading from '../components/Heading';
 import Link from 'next/link';
 import { getFeaturedReview } from '../lib/reviews';
 
-export const metadata = {
-  title:'Indie Gamer',
-  description:'Only the best indie games',
-};
+
 
 
 export default async function HomePage() {
