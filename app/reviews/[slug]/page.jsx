@@ -1,5 +1,5 @@
 import Heading from '../../../components/Heading';
-import { getReview } from '../../../lib/reviews';
+import { getReview,getSlugs  } from '../../../lib/reviews';
 
 export async function generateStaticParams() {
   const slugs = await getSlugs();
