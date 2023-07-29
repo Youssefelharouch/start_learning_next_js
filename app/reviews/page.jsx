@@ -10,7 +10,6 @@ export const generateStaticParams = async () => {
 
 export default async function ReviewsPage() {
   const reviews = await getReviews();
-  console.log('[reviewsPage] reviews',reviews);
   return (
     <>   
       <Heading>Reviews</Heading>
