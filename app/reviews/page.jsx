@@ -10,10 +10,10 @@ export const generateStaticParams = async () => {
 
 export default async function ReviewsPage() {
   const reviews = await getReviews();
-  console.log('rendreing');
+  console.log('[reviewsPage] reviews',reviews);
   return (
     <>   
-      <Heading>{reviews.title}</Heading>
+      <Heading>Reviews</Heading>
       <ul className="flex flex-row flex-wrap gap-3">
         {reviews.map((review) => (
           <li key={review.slug}
