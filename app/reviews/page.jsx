@@ -4,7 +4,9 @@ import { getReviews, getSlugs } from "../../lib/reviews";
 import Image from "next/image";
 
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
+export const revalidate = 30; // seconds
+
 
 
 export const metadata = {

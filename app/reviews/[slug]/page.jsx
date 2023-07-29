@@ -4,17 +4,23 @@ import ShareLinkButton from '../../../components/ShareLinkButton';
 import Image from 'next/image';
 import {notFound} from 'next/navigation';
 
-export async function generateMetadata({ params: { slug } }) {
-  const review = await getReview(slug);
-  if (!review) {
-    notFound();
-  }
-  return {
-    title: review.title,
-  };
-}
+// export async function generateMetadata({ params: { slug } }) {
+//   const review = await getReview(slug);
+//   if (!review) {
+//     notFound();
+//   }
+//   return {
+//     title: review.title,
+//   };
+// }
+// export const dynamic = 'force-dynamic';
 
-export const dynamic = 'force-dynamic';
+
+export async function generateStaticParams() {
+  const slugs = await getSlugs();
+  // console.log('[ReviewPage] generateStaticParams:', slugs);
+  return slugs.map((slug) => ({ slug }));
+}
 
 
 export default async function ReviewPage({params:{ slug }}) {
