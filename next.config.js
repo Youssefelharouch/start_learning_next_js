@@ -2,8 +2,14 @@
 module.exports = {
   // output: 'export',
   images : {
-    //if you want to use a static website 
-    unoptimized : true,
+    remotePatterns: [
+      {
+        protocol:'http',
+        port: '1337',
+        hostname:'localhost',
+        pathname:'/uploads/**',
 
+      },
+    ],
   },
 };

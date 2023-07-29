@@ -1,20 +1,17 @@
 import Heading from '../../../components/Heading';
 import { getReview,getSlugs  } from '../../../lib/reviews';
 import ShareLinkButton from '../../../components/ShareLinkButton';
-import Image from 'next/image'
-
-
-// export async function generateStaticParams() {
-//   const slugs = await getSlugs();
-//   return slugs.map((slug) => ({ slug }));
+import Image from 'next/image';
+// export async function generateMetadata({ params: { slug } }) {
+//   console.log('[RevitemPage]',slug);
+//   const review = await getReview(slug);
+//   return {
+//     title: review.title,
+//   };
 // }
 
-export async function generateMetadata({ params: { slug } }) {
-  const review = await getReview(slug);
-  return {
-    title: review.title,
-  };
-}
+export const dynamic = 'force-dynamic';
+
 
 export default async function ReviewPage({params:{ slug }}) {
   const review = await getReview(slug);

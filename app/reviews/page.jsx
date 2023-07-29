@@ -3,12 +3,14 @@ import Link from "next/link";
 import { getReviews, getSlugs } from "../../lib/reviews";
 import Image from "next/image";
 
-export const generateStaticParams = async () => {
-  const slugs = await getSlugs();
-  return slugs.map((slug) => {
-    slug;
-  });
+
+export const dynamic = 'force-dynamic';
+
+
+export const metadata = {
+  title: 'Reviews',
 };
+
 
 export default async function ReviewsPage() {
   const reviews = await getReviews(6);
