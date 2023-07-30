@@ -9,7 +9,7 @@ export const metadata = {
 export default async function ReviewsPage({ searchParams }) {
   const page = parsePageParams(searchParams.page);
   const PAGE_SIZE = 6;
-  const reviews = await getReviews(PAGE_SIZE, page);
+  const {reviews,pageCount} = await getReviews(PAGE_SIZE, page);
   console.log("[reviewPage log ]", page);
   return (
     <>
@@ -17,7 +17,7 @@ export default async function ReviewsPage({ searchParams }) {
 
       <div className="flex gap-2 pb-3">
         <Link href={`/reviews?page=${page - 1}`}>&lt;</Link>
-        <span>Page {page}</span>
+        <span>Page {page} of {pageCount} </span>
         <Link href={`/reviews?page=${page + 1}`}>&gt;</Link>
       </div>
 
