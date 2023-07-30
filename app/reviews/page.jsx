@@ -2,24 +2,23 @@ import Heading from "../../components/Heading";
 import Link from "next/link";
 import { getReviews, getSlugs } from "../../lib/reviews";
 import Image from "next/image";
-
-// export const dynamic = 'force-dynamic';
-
 export const metadata = {
   title: "Reviews",
 };
 
-export default async function ReviewsPage({searchParams}) {
-  const page = parsePageParams(searchParams);
-  const reviews = await getReviews(6);
+export default async function ReviewsPage({ searchParams }) {
+  const page = parsePageParams(searchParams.page);
+  const PAGE_SIZE = 6;
+  const reviews = await getReviews(PAGE_SIZE, page);
+  console.log("[reviewPage log ]", page);
   return (
     <>
       <Heading>Reviews</Heading>
 
       <div className="flex gap-2 pb-3">
-        <Link href={`/reviews?page=${page-1}`}>&lt;</Link>
+        <Link href={`/reviews?page=${page - 1}`}>&lt;</Link>
         <span>Page {page}</span>
-        <Link href={`/reviews?page=${page+1}`}>&rt;</Link>
+        <Link href={`/reviews?page=${page + 1}`}>&gt;</Link>
       </div>
 
       <ul className="flex flex-row flex-wrap gap-3">
@@ -49,10 +48,12 @@ export default async function ReviewsPage({searchParams}) {
 }
 
 const parsePageParams = (paramsvalue) => {
-  if(paramsvalue) {
+  if (paramsvalue) {
     const page = parseInt(paramsvalue);
-    if(isFinite(page) && page>0) {
-      return  page;
+
+    if (isFinite(page) && page > 0) {
+      return page;
     }
   }
-}
+  return 1;
+};
